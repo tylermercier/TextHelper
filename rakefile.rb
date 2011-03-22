@@ -27,7 +27,11 @@ task :test => [:compile] do
 	sh "#{NUNIT_PATH} #{config}"
 end
 
+#rake nuget k=<nuget_access_key>
 task :nuget do
 	build "NuGet"
 	sh 'nuget pack TextHelper.nuspec -b build\nuget -o build\nuget_packages'
+	if ENV['k']
+		sh "nuget push build\\nuget_packages\\TextHelper.0.1.nupkg #{ENV['k']}"
+	end
 end
