@@ -1,2 +1,2 @@
 ##TextHelper.NET
-Enter description here
+A TextHelper following Ruby on Rails [TextHelper](http://api.rubyonrails.org/classes/ActionView/Helpers/TextHelper.html) that provides utility methods like Truncate, WordWrap, AutoLink, Highlight, etc.
