@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextHelper", "TextHelper\TextHelper.csproj", "{97FDD0E2-14A9-40DA-AD03-8F8E8C0CD75A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextHelper.Tests", "TextHelper.Tests\TextHelper.Tests.csproj", "{E041DECF-64F2-4B16-9DCE-4E92769E41BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		NuGet|Any CPU = NuGet|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97FDD0E2-14A9-40DA-AD03-8F8E8C0CD75A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97FDD0E2-14A9-40DA-AD03-8F8E8C0CD75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97FDD0E2-14A9-40DA-AD03-8F8E8C0CD75A}.NuGet|Any CPU.ActiveCfg = NuGet|Any CPU
+		{97FDD0E2-14A9-40DA-AD03-8F8E8C0CD75A}.NuGet|Any CPU.Build.0 = NuGet|Any CPU
+		{97FDD0E2-14A9-40DA-AD03-8F8E8C0CD75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97FDD0E2-14A9-40DA-AD03-8F8E8C0CD75A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E041DECF-64F2-4B16-9DCE-4E92769E41BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E041DECF-64F2-4B16-9DCE-4E92769E41BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E041DECF-64F2-4B16-9DCE-4E92769E41BE}.NuGet|Any CPU.ActiveCfg = NuGet|Any CPU
+		{E041DECF-64F2-4B16-9DCE-4E92769E41BE}.NuGet|Any CPU.Build.0 = NuGet|Any CPU
+		{E041DECF-64F2-4B16-9DCE-4E92769E41BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E041DECF-64F2-4B16-9DCE-4E92769E41BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\tmercier\Documents\depot\TextHelper.NET\TextHelper.Tests\bin\Debug\TextHelper.Tests.dll" total="43" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2011-03-22" time="15:53:03">
+  <environment nunit-version="2.5.9.10348" clr-version="2.0.50727.4952" os-version="Microsoft Windows NT 6.1.7600.0" platform="Win32NT" cwd="C:\Users\tmercier\Documents\depot\TextHelper.NET" machine-name="WIN-8E6VSPJBI69" user="tmercier" user-domain="WIN-8E6VSPJBI69" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\tmercier\Documents\depot\TextHelper.NET\TextHelper.Tests\bin\Debug\TextHelper.Tests.dll" executed="True" result="Success" success="True" time="0.798" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="TextHelper" executed="True" result="Success" success="True" time="0.767" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="0.765" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="AutoLinkerFixture" executed="True" result="Success" success="True" time="0.623" asserts="0">
+                <results>
+                  <test-case name="TextHelper.Tests.AutoLinkerFixture.AutoLink_should_convert_emails_to_hyperlinks" executed="True" result="Success" success="True" time="0.566" asserts="1" />
+                  <test-case name="TextHelper.Tests.AutoLinkerFixture.AutoLink_should_convert_https_urls_to_hyperlinks" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                  <test-case name="TextHelper.Tests.AutoLinkerFixture.AutoLink_should_convert_multiple_urls_to_hyperlinks" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="TextHelper.Tests.AutoLinkerFixture.AutoLink_should_convert_urls_and_emails" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.AutoLinkerFixture.AutoLink_should_convert_urls_to_hyperlinks" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.AutoLinkerFixture.AutoLink_should_not_do_anything_if_no_linkable_found" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.AutoLinkerFixture.AutoLink_should_only_link_emails_when_linkMode_is_email" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="TextHelper.Tests.AutoLinkerFixture.AutoLink_should_only_link_urls_when_linkMode_is_url" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.AutoLinkerFixture.AutoLink_should_use_custom_textReplacer" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.AutoLinkerFixture.AutoLink_should_use_html_attributes" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="ExcerptorFixture" executed="True" result="Success" success="True" time="0.012" asserts="0">
+                <results>
+                  <test-case name="TextHelper.Tests.ExcerptorFixture.Excerpt_should_be_case_insensitive" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.ExcerptorFixture.Excerpt_ShouldNotUseLeftOmissionIfLeftIndexIsLessThanOrEqualToZero" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.ExcerptorFixture.Excerpt_ShouldNotUserRightOmissionIfRightIndexIsGreaterThanOrEqualToTheTextLength" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.ExcerptorFixture.Excerpt_ShouldReturnEmptyStringIfPhraseNotFound" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="TextHelper.Tests.ExcerptorFixture.Excerpt_ShouldReturnWholeStringIfRadiusIsLargerThanLength" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.ExcerptorFixture.Excerpt_ShouldUseCustomOmission" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="TextHelper.Tests.ExcerptorFixture.Excerpt_ShouldUseEllipses" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="HighlightorFixture" executed="True" result="Success" success="True" time="0.020" asserts="0">
+                <results>
+                  <test-case name="TextHelper.Tests.HighlightorFixture.Highlight_should_match_case_insensitive" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                  <test-case name="TextHelper.Tests.HighlightorFixture.Highlight_should_take_multiple_phrases" executed="True" result="Success" success="True" time="0.010" asserts="1" />
+                  <test-case name="TextHelper.Tests.HighlightorFixture.Hightlight_ShouldHighlightIfPhraseFound" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.HighlightorFixture.Hightlight_ShouldHighlightWithCustomHighlighter" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.HighlightorFixture.Hightlight_ShouldNotHighlightIfPhraseNotFound" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="PluralizerFixture" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                <results>
+                  <test-suite type="ParameterizedTest" name="Pluralize_should_not_pluralize_when_count_is_less_than_2" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                    <results>
+                      <test-case name="TextHelper.Tests.PluralizerFixture.Pluralize_should_not_pluralize_when_count_is_less_than_2(0)" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="TextHelper.Tests.PluralizerFixture.Pluralize_should_not_pluralize_when_count_is_less_than_2(1)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-case name="TextHelper.Tests.PluralizerFixture.Pluralize_should_pluraize_when_count_is_greater_than_1" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.PluralizerFixture.Pluralize_should_use_given_plural" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="SimpleFormatterFixture" executed="True" result="Success" success="True" time="0.050" asserts="0">
+                <results>
+                  <test-case name="TextHelper.Tests.SimpleFormatterFixture.ToSimpleFormat_should_not_wrap_if_wrapped" executed="True" result="Success" success="True" time="0.035" asserts="1" />
+                  <test-case name="TextHelper.Tests.SimpleFormatterFixture.ToSimpleFormat_should_replace_newline_with_br_tag" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+                  <test-case name="TextHelper.Tests.SimpleFormatterFixture.ToSimpleFormat_should_replace_one_leading_newline_with_new_paragraph" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.SimpleFormatterFixture.ToSimpleFormat_should_replace_one_trailing_newline_with_new_paragraph" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="TextHelper.Tests.SimpleFormatterFixture.ToSimpleFormat_should_replace_two_leading_newlines_with_new_paragraph" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.SimpleFormatterFixture.ToSimpleFormat_should_replace_two_newlines_with_new_paragraph" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.SimpleFormatterFixture.ToSimpleFormat_should_replace_two_trailing_newline_with_new_paragraph" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="TextHelper.Tests.SimpleFormatterFixture.ToSimpleFormat_should_wrap_inside_p" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="TruncatorFixture" executed="True" result="Success" success="True" time="0.010" asserts="0">
+                <results>
+                  <test-case name="TextHelper.Tests.TruncatorFixture.Truncate_ShouldAddEllipsesIfActualLengthIsGreater" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                  <test-case name="TextHelper.Tests.TruncatorFixture.Truncate_ShouldNotChangeIfActualLengthIsLessOrEqual" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="TextHelper.Tests.TruncatorFixture.Truncate_ShouldNotUseSeparatorIfNoneFound" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.TruncatorFixture.Truncate_ShouldUseCustomOmmissionWithSeparator" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="TextHelper.Tests.TruncatorFixture.Truncate_ShouldUseSeparatorIfFound" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="TextHelper.Tests.TruncatorFixture.Truncate_ShouldUseTheCustomOmmission" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="WordWrapperFixture" executed="True" result="Success" success="True" time="0.008" asserts="0">
+                <results>
+                  <test-case name="TextHelper.Tests.WordWrapperFixture.WordWrap_should_not_wrap_if_length_less_than_text_length" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                  <test-case name="TextHelper.Tests.WordWrapperFixture.WordWrap_should_wrap_multi_line_text" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                  <test-case name="TextHelper.Tests.WordWrapperFixture.WordWrap_should_wrap_single_line_text" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
