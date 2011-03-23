@@ -4,7 +4,8 @@ Inspired by the [Ruby on Rails Text Helpers](http://api.rubyonrails.org/classes/
 
 ## AutoLink
 Turns all URLs and e-mail addresses into clickable links.
-```csharp
+
+```
 "Go to http://www.asp.net and admin@example.com".AutoLink();
 // => @"Go to <a href=""http://www.asp.net"">http://www.asp.net</a> and <a href=""mailto:admin@example.com"">admin@example.com</a>";
 
