@@ -23,8 +23,8 @@ namespace TextHelper.Tests
         [Test]
         public void Pluralize_should_use_given_plural()
         {
-            var result = "apple".Pluralize(2, "applex");
-            Assert.That(result, Is.EqualTo("applex"));
+            var result = "octopus".Pluralize(2, "octopi");
+            Assert.That(result, Is.EqualTo("octopi"));
         }
     }
 }

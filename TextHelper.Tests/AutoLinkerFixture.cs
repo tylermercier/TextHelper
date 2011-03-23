@@ -6,9 +6,13 @@ namespace TextHelper.Tests
     [TestFixture]
     public class AutoLinkerFixture
     {
+        class Person
+        {
+            public string controller { get; set; }
+        }
         [Test]
         public void AutoLink_should_not_do_anything_if_no_linkable_found()
-        {
+        {            
             var result = "hello".AutoLink();
             Assert.That(result, Is.EqualTo("hello"));
         }
