@@ -5,7 +5,6 @@ Inspired by the [Ruby on Rails Text Helpers](http://api.rubyonrails.org/classes/
 ## AutoLink
 Turns all URLs and e-mail addresses into clickable links.
 
-
 	"Go to http://www.asp.net and admin@example.com".AutoLink();
 	// => @"Go to <a href=""http://www.asp.net"">http://www.asp.net</a> and <a href=""mailto:admin@example.com"">admin@example.com</a>";
 
@@ -20,66 +19,60 @@ Turns all URLs and e-mail addresses into clickable links.
 
 ## Excerpt
 Extracts an excerpt from text that matches the first instance of phrase. The resulting string will be stripped in any case.
-```csharp
-"hello world".Excerpt(" ", 2);
-// =>"...lo wo..."
 
-"hello world".Excerpt(" ", 2, "<cut>");
-// => "<cut>lo wo<cut>";
-```
+	"hello world".Excerpt(" ", 2);
+	// =>"...lo wo..."
+
+	"hello world".Excerpt(" ", 2, "<cut>");
+	// => "<cut>lo wo<cut>";
 
 ## Highlight
 Highlights one or more phrases everywhere in text by inserting it into a highlighter string.
-```csharp
-"hello world".Highlight("world");
-// => @"hello <strong class=""highlighted"">world</strong>";
 
-"hello world".Highlight("world", "<b>{0}</b>");
-// => @"hello <b>world</b>";
+	"hello world".Highlight("world");
+	// => @"hello <strong class=""highlighted"">world</strong>";
 
-"hello world".Highlight(new List<string> {"Hello", "World"}, "[{0}]");
-// => @"[hello] [world]";
-```
+	"hello world".Highlight("world", "<b>{0}</b>");
+	// => @"hello <b>world</b>";
+
+	"hello world".Highlight(new List<string> {"Hello", "World"}, "[{0}]");
+	// => @"[hello] [world]";
 
 ## Pluraize
 Attempts to pluralize the singular word unless count is 1.
-```csharp
-"apple".Pluralize(2);
-// => "apples";
 
-"octpus".Pluralize(1, "octopi");
-// => "octpus";
+	"apple".Pluralize(2);
+	// => "apples";
 
-"octpus".Pluralize(2, "octopi");
-// => "octopi";
-```
+	"octpus".Pluralize(1, "octopi");
+	// => "octpus";
+
+	"octpus".Pluralize(2, "octopi");
+	// => "octopi";
 
 ## SimpleFormat
 Returns text transformed into HTML using simple formatting rules. Two or more consecutive newlines(\n\n) are considered as a paragraph and wrapped in <p> tags. One newline (\n) is considered as a linebreak and a <br/> tag is appended. This method does not remove the newlines from the text.## Truncate
-```csharp
-"hello\n world".ToSimpleFormat();
-// => "<p>hello\n<br/> world</p>";
 
-"hello\n\n world".ToSimpleFormat();
-// => "<p>hello</p>\n\n<p> world</p>";
-```
+	"hello\n world".ToSimpleFormat();
+	// => "<p>hello\n<br/> world</p>";
+
+	"hello\n\n world".ToSimpleFormat();
+	// => "<p>hello</p>\n\n<p> world</p>";
 
 ## Truncate
 Truncates a given text after a given length.
-```csharp
-"hello".Truncate(4);
-// => "hell..."
 
-"hello world".Truncate(8, separator: " ");
-// => "hello...";
+	"hello".Truncate(4);
+	// => "hell..."
 
-"hello world".Truncate(8, "<end>", " ");
-// => "hello<end>";
-```
+	"hello world".Truncate(8, separator: " ");
+	// => "hello...";
+
+	"hello world".Truncate(8, "<end>", " ");
+	// => "hello<end>";
 
 ## WordWrap
 Wraps the text into lines at the word boundary nearest to the lineWidth.
-```csharp
-"hello world \nhere I come\nagain".WordWrap(7);
-// => "hello\nworld\nhere I\ncome\nagain";
-```
+
+	"hello world \nhere I come\nagain".WordWrap(7);
+	// => "hello\nworld\nhere I\ncome\nagain";
