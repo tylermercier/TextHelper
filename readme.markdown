@@ -5,19 +5,18 @@ Inspired by the [Ruby on Rails Text Helpers](http://api.rubyonrails.org/classes/
 ## AutoLink
 Turns all URLs and e-mail addresses into clickable links.
 
-```
-"Go to http://www.asp.net and admin@example.com".AutoLink();
-// => @"Go to <a href=""http://www.asp.net"">http://www.asp.net</a> and <a href=""mailto:admin@example.com"">admin@example.com</a>";
 
-"Go to http://www.asp.net to see more".AutoLink(textReplacer: x => x.ToUpper());
-// => @"Go to <a href=""http://www.asp.net"">HTTP://WWW.ASP.NET</a> to see more";
+	"Go to http://www.asp.net and admin@example.com".AutoLink();
+	// => @"Go to <a href=""http://www.asp.net"">http://www.asp.net</a> and <a href=""mailto:admin@example.com"">admin@example.com</a>";
 
-"Go to http://www.asp.net and admin@example.com".AutoLink(linkMode: LinkMode.Email);
-// => @"Go to http://www.asp.net and <a href=""mailto:admin@example.com"">admin@example.com</a>";
+	"Go to http://www.asp.net to see more".AutoLink(textReplacer: x => x.ToUpper());
+	// => @"Go to <a href=""http://www.asp.net"">HTTP://WWW.ASP.NET</a> to see more";
 
-"Go to http://www.asp.net to see more".AutoLink(new Dictionary<string, string> { {"target", "_blank"}});
-// => @"Go to <a href=""http://www.asp.net"" target=""_blank"">http://www.asp.net</a> to see more";
-```
+	"Go to http://www.asp.net and admin@example.com".AutoLink(linkMode: LinkMode.Email);
+	// => @"Go to http://www.asp.net and <a href=""mailto:admin@example.com"">admin@example.com</a>";
+
+	"Go to http://www.asp.net to see more".AutoLink(new Dictionary<string, string> { {"target", "_blank"}});
+	// => @"Go to <a href=""http://www.asp.net"" target=""_blank"">http://www.asp.net</a> to see more";
 
 ## Excerpt
 Extracts an excerpt from text that matches the first instance of phrase. The resulting string will be stripped in any case.
