@@ -13,6 +13,12 @@ namespace TextHelper
 
     public static class AutoLinker
     {
+        /// <summary>
+        /// Turns all URLs and e-mail addresses into clickable links.
+        /// </summary>
+        /// <param name="htmlAttributes">Adds HTML attributes to the links.</param>
+        /// <param name="textReplacer">Lambda expression to change what text is shown inside the link tag.</param>
+        /// <param name="linkMode">Option to limit what should be linked.</param>
         public static string AutoLink(this string text, IDictionary<string, string> htmlAttributes=null, Func<string, string> textReplacer=null, LinkMode linkMode=LinkMode.All)
         {
             textReplacer = textReplacer ?? (x => x);
@@ -72,7 +78,7 @@ namespace TextHelper
                 return GetHyperlink(@"<a href=""mailto:{0}""{1}>{2}</a>", match.Value);
             }
 
-            private  string GetHyperlink(string format, string link)
+            private string GetHyperlink(string format, string link)
             {
                 return string.Format(format, link, GetAttributesFromDictionary(HtmlAttributes), GetTextFor(link));
             }

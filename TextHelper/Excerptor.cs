@@ -4,7 +4,14 @@ namespace TextHelper
 {
     public static class Excerptor
     {
-        public  static string Excerpt(this string text, string phrase, int radius=100, string omission="...")
+        /// <summary>
+        /// Extracts an excerpt from text that matches the first instance of phrase. The resulting string will be stripped in any case.
+        /// </summary>
+        /// <param name="phrase">The excerpt to find</param>
+        /// <param name="radius">Expands the excerpt on each side of the first occurrence of phrase by the number of characters defined (default 100).</param>
+        /// <param name="omission">If the excerpt radius overflows the beginning or end of the text, then the omission option (which defaults to “…”) will be prepended/appended accordingly.</param>
+        /// <returns>If the phrase isn’t found, string.Empty is returned.</returns>
+        public static string Excerpt(this string text, string phrase, int radius=100, string omission="...")
         {
             var phraseIndex = text.IndexOf(phrase, StringComparison.InvariantCultureIgnoreCase);
             if (phraseIndex == -1) return string.Empty;

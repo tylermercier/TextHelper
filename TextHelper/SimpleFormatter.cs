@@ -4,6 +4,12 @@ namespace TextHelper
 {
     public static class SimpleFormatter
     {
+        /// <summary>
+        /// Returns text transformed into HTML using simple formatting rules.
+        /// Two or more consecutive newlines(\n\n) are considered as a paragraph and wrapped in &lt;p&gt; tags.
+        /// One newline (\n) is considered as a linebreak and a &lt;br /&gt; tag is appended.
+        /// This method does not remove the newlines from the text.
+        /// </summary>
         public static string ToSimpleFormat(this string text)
         {
             var result = text.Trim();

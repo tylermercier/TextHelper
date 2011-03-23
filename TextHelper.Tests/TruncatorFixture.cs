@@ -5,51 +5,48 @@ namespace TextHelper.Tests
     [TestFixture]
     public class TruncatorFixture
     {
-        const string HelloText = "hello";
-        const string HelloWorldText = "hello world";
-
         [Test]
-        public void Truncate_ShouldNotChangeIfActualLengthIsLessOrEqual()
+        public void Truncate_should_not_change_if_actual_length_is_less_or_equal()
         {
-            var result = HelloText.Truncate(5);
+            var result = "hello".Truncate(5);
 
-            Assert.That(result, Is.EqualTo(HelloText));
+            Assert.That(result, Is.EqualTo("hello"));
         }
 
         [Test]
-        public void Truncate_ShouldAddEllipsesIfActualLengthIsGreater()
+        public void Truncate_should_add_ellipses_if_actual_length_is_greater()
         {
-            var result = HelloText.Truncate(4);
+            var result = "hello".Truncate(4);
 
             Assert.That(result, Is.EqualTo("hell..."));
         }
 
         [Test]
-        public void Truncate_ShouldUseTheCustomOmmission()
+        public void Truncate_should_use_the_custom_omission()
         {
-            var result = HelloText.Truncate(4, "... continued");
+            var result = "hello".Truncate(4, "... continued");
 
             Assert.That(result, Is.EqualTo("hell... continued"));
         }
 
         [Test]
-        public void Truncate_ShouldNotUseSeparatorIfNoneFound()
+        public void Truncate_should_not_use_separator_if_none_found()
         {
-            var result = HelloText.Truncate(4, separator: " ");
+            var result = "hello".Truncate(4, separator: " ");
             Assert.That(result, Is.EqualTo("hell..."));
         }
 
         [Test]
-        public void Truncate_ShouldUseSeparatorIfFound()
+        public void Truncate_should_use_separator_if_found()
         {
-            var result = HelloWorldText.Truncate(8, separator: " ");
+            var result = "hello world".Truncate(8, separator: " ");
             Assert.That(result, Is.EqualTo("hello..."));
         }
 
         [Test]
-        public void Truncate_ShouldUseCustomOmmissionWithSeparator()
+        public void Truncate_should_use_custom_omission_with_separator()
         {
-            var result = HelloWorldText.Truncate(8, "<cut>", " ");
+            var result = "hello world".Truncate(8, "<cut>", " ");
             Assert.That(result, Is.EqualTo("hello<cut>"));
         }
     }
