@@ -3,20 +3,17 @@ include REXML
 
 PROJECT_NAME = "TextHelper"
 BUILD_CONFIG = "Debug"
-MSBUILD_PATH = "C:/Windows/Microsoft.NET/Framework/v4.0.30319/msbuild.exe"
-NUNIT_PATH = "packages/NUnit.2.5.9.10348/tools/nunit-console.exe"
 
-task :default => [:clean, :compile, :test]
-
-def build build_config
-	solution_name = "#{PROJECT_NAME}.sln"
-	config = "/p:Configuration=#{build_config} #{solution_name} /t:build /nologo /verbosity:minimal"
-	sh "#{MSBUILD_PATH} #{config}"
+def build target_name, target, build_config
+	msbuild_path = "C:/Windows/Microsoft.NET/Framework/v4.0.30319/msbuild.exe"
+	config = "#{target_name} /p:Configuration=#{build_config} /t:#{target} /nologo /verbosity:minimal"
+	sh "#{msbuild_path} #{config}"
 end
 
-def package_nuget
-	build "NuGet"
-	sh "nuget pack #{PROJECT_NAME}.nuspec -b build\\nuget -o build\\nuget_packages"
+def test test_project_name
+	nunit_path = "packages/NUnit.2.5.9.10348/tools/nunit-console.exe"
+	config = "#{test_project_name}/bin/#{BUILD_CONFIG}/#{test_project_name}.dll /xml=build/#{test_project_name}.xml /nologo"
+	sh "#{nunit_path} #{config}"
 end
 
 def update_nuspec_version version
@@ -34,33 +31,33 @@ def update_nuspec_version version
 	end
 end
 
+task :default => [:clean, :compile, :test]
+
 task :clean do
-	solution_name = "#{PROJECT_NAME}.sln"
-	config = "/p:Configuration=#{BUILD_CONFIG} #{solution_name} /t:clean /nologo /verbosity:minimal"
-	sh "#{MSBUILD_PATH} #{config}"
+	build "#{PROJECT_NAME}.sln", "clean", BUILD_CONFIG
 end
 
 task :compile => [:clean] do
-	build BUILD_CONFIG
+	build "#{PROJECT_NAME}.sln", "build", BUILD_CONFIG
 end
 
 task :test => [:compile] do
-	TEST_PROJECT_NAME = "#{PROJECT_NAME}.Tests"
-	config = "#{TEST_PROJECT_NAME}/bin/#{BUILD_CONFIG}/#{TEST_PROJECT_NAME}.dll /xml=build/#{TEST_PROJECT_NAME}.xml /nologo"
-	sh "#{NUNIT_PATH} #{config}"
+	test "#{PROJECT_NAME}.Tests"
 end
 
+#rake nuget v=0.3.0
 task :package do
-	package_nuget
+	if ENV['v']
+		puts "Updating NuGet package to version #{ENV['v']}"
+		update_nuspec_version "#{ENV['v']}"
+	end
+	build "#{PROJECT_NAME}.sln", "build", "NuGet"
+	sh "nuget pack #{PROJECT_NAME}.nuspec -b build\\nuget -o build\\nuget_packages"
 end
 
 #rake nuget v=0.3.0 k=<nuget_access_key>
-task :publish do
-	if ENV['v']
-		update_nuspec_version "#{ENV['v']}"
-		package_nuget
-		if ENV['k']
-			sh "nuget push build\\nuget_packages\\#{PROJECT_NAME}#{ENV['v']}.nupkg #{ENV['k']}"
-		end
+task :publish => [:package] do
+	if ENV['k'] && ENV['v']
+		sh "nuget push build\\nuget_packages\\#{PROJECT_NAME}#{ENV['v']}.nupkg #{ENV['k']}"
 	end
 end
